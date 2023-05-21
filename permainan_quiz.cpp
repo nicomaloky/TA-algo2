@@ -117,7 +117,7 @@ int main() {
                 system("clear");
                 goto awal;
             }
-           
+           //ini else nya error gatau kenapa pas dihapus bisa
             {
              exit(0); 
             }
