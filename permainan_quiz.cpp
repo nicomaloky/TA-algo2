@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <windows.h>
 #include <queue>
 
 using namespace std;
@@ -105,20 +106,21 @@ int main() {
         cin.ignore();
         cin.get();
         
-        system("clear");
+        system("CLS");
     }
     
     // Menampilkan nilai akhir
     cout << "* Quiz Berakhir *" << endl;
     cout << "\nNilai anda: " << nilai << "/3" << endl;
     cout << "Ingin diulang? (y/n) ";cin>>y;
-            if (y=='y' || 'Y');
-            {
-                system("clear");
-                goto awal;
-            }
-           //ini else nya error gatau kenapa pas dihapus bisa
-            {
-             exit(0); 
+            switch(y){
+                case 'y':
+                case 'Y':
+                    system("CLS");
+                    goto awal;
+                    break;
+                case 'n':
+                case 'N':
+                break;
             }
 }
