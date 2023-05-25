@@ -95,12 +95,10 @@ int main() {
         cout << "\nMasukkan jawaban anda (1-4): ";
         cin >> jawaban;
         
-        if (periksaJawaban(pertanyaanSaatIni, jawaban)) 
-        {
+        if (periksaJawaban(pertanyaanSaatIni, jawaban)) {
             cout << "\nBenar!" << endl;
             nilai++;
-        } else 
-        {
+        } else {
             cout << "\nSalah." << endl;
         }
         
@@ -108,22 +106,14 @@ int main() {
         cin.ignore();
         cin.get();
         
-<<<<<<< HEAD
-        system("cls");
-=======
         system("CLS");
->>>>>>> 1cf6fcccdf7d2f622498fff0a92bebfac04fe12e
     }
     
     // Menampilkan nilai akhir
     cout << "* Quiz Berakhir *" << endl;
     cout << "\nNilai anda: " << nilai << "/3" << endl;
     cout << "Ingin diulang? (y/n) ";cin>>y;
-<<<<<<< HEAD
-          switch(y){
-=======
             switch(y){
->>>>>>> 1cf6fcccdf7d2f622498fff0a92bebfac04fe12e
                 case 'y':
                 case 'Y':
                     system("CLS");
@@ -132,7 +122,5 @@ int main() {
                 case 'n':
                 case 'N':
                 break;
-<<<<<<< HEAD
-            }       
->>>>>>> 1cf6fcccdf7d2f622498fff0a92bebfac04fe12e
+            }
 }
