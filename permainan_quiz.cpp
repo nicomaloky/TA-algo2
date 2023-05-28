@@ -1,13 +1,15 @@
-#include <iostream>
-#include <string>
-#include <windows.h>
-#include <queue>
+// BAGIAN HEADER / LIBRARY
+#include <iostream> // library berisi perintah standar input/output 
+#include <string> // lib untuk mengoprasikan objek string
+#include <windows.h> // lib fungsi sistem operasi windows
+#include <queue> // mengimplementasikan antrean
 
-using namespace std;
+using namespace std; // import fungsi-fungsi lib standar cpp, ex: tanpa menuliskan std:: pada baris kode
 
-// Tentukan struct untuk setiap pertanyaan
+// Menentukan/mendefinisikan struktur(struct) utk setiap pertanyaan
 struct Pertanyaan {
-    string kategori;
+    // deklarasi variable
+    string kategori; 
     string pertanyaan;
     string pilihan[4];
     int jawaban;
@@ -17,7 +19,7 @@ struct Pertanyaan {
 void tampilkanPertanyaan(Pertanyaan q) {
     cout << "Kategori: " << q.kategori << endl;
     cout << "Pertanyaan: " << q.pertanyaan << endl;
-    for (int i = 0; i < 4; i++) {
+    for (int i = 0; i < 4; i++) { 
         cout << i+1 << ". " << q.pilihan[i] << endl;
     }
 }
@@ -29,6 +31,8 @@ bool periksaJawaban(Pertanyaan q, int ans) {
 
 int main() {
     // Tentukan pertanyaan untuk setiap kategori
+    // data pertanyaan dibuat menggunakan array
+    // array dibawah ini berisi, kolom 1 : kategori, kolom 2 : pertanyaan, kolom selanjutnya pilihan jawaban, dan jawaban benar dengan isi angka sesuai urut.
     Pertanyaan pengetahuanUmum[3] = {
         {"Pengetahuan Umum", "Apa ibukota Indonesia?", {"Jakarta", "Bandung", "Surabaya", "Medan"}, 1},
         {"Pengetahuan Umum", "Apa planet terbesar di tata surya kita?", {"Jupiter", "Saturnus", "Uranus", "Neptunus"}, 1},
@@ -65,17 +69,17 @@ int main() {
     switch (pilihan) {
         case 1:
             for (int i = 0; i < 3; i++) {
-                q.push(pengetahuanUmum[i]);
+                q.push(pengetahuanUmum[i]); // menambahkan pertanyaan kat. pengetahuan umum kedlm antrean
             }
             break;
         case 2:
-            for (int i = 0; i < 3; i++) {
-                q.push(sejarah[i]);
+            for (int i = 0; i < 3; i++) { 
+                q.push(sejarah[i]); // menambahkan pertanyaan kat. sejarah kedlm antrean
             }
             break;
         case 3:
             for (int i = 0; i < 3; i++) {
-                q.push(olahraga[i]);
+                q.push(olahraga[i]); // menambahkan pertanyaan kat. olahraga kedlm antrian
             }
             break;
         default:
@@ -85,9 +89,9 @@ int main() {
     
     // Ulangi setiap pertanyaan dalam antrean dan tanyakan
     int nilai = 0;
-    while (!q.empty()) {
-        Pertanyaan pertanyaanSaatIni = q.front();
-        q.pop();
+    while (!q.empty()) { 
+        Pertanyaan pertanyaanSaatIni = q.front(); // mengambil element pertama pertanyaan
+        q.pop(); // menghapus pertanyaan terakhir 
         
         tampilkanPertanyaan(pertanyaanSaatIni);
         
@@ -99,14 +103,14 @@ int main() {
             cout << "\nBenar!" << endl;
             nilai++;
         } else {
-            cout << "\nSalah." << endl;
+            cout << "\nSalah." << endl; 
         }
         
         cout << "\nTekan enter untuk melanjutkan..." << endl;
         cin.ignore();
         cin.get();
         
-        system("CLS");
+        system("CLS"); // membersihkan layar
     }
     
     // Menampilkan nilai akhir
